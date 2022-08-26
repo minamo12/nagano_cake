@@ -12,4 +12,10 @@ class Admin::ItemsController < ApplicationController
 
   def edit
   end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:image)
+  end
 end
