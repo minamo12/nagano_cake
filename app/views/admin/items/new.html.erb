@@ -19,6 +19,7 @@
 
 <div>
   <label>ジャンル</label>
+  <%= f.collection_select :genre_id, Genre.all, :id, :name %>
 </div>
 
 <div>
