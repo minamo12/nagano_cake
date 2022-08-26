@@ -1,6 +1,6 @@
 <h1>商品新規登録</h1>
 
-<%= form_with model: @item, url: new_admin_item_path do |f| %>
+<%= form_with model: @item, url: admin_items_path do |f| %>
 
 <div>
   <label>商品画像</label>
@@ -33,4 +33,5 @@
 <div>
   <%= f.submit '新規登録' %>
 </div>
+
 <% end %>
