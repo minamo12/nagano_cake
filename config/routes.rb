@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     get 'orders/complete' => 'orders#complete'
     get 'orders/:id' => 'orders#show'
 
+    #addresses
+    resources :addresses, only: [:index, :edit, :create, :update, :destroy]
+
   end
 
   devise_for :customers, skip: [:passwords], controllers: {
