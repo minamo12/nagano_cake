@@ -29,7 +29,7 @@
           <li>マイページ</li>
           <li>商品一覧</li>
           <li>カート</li>
-          <li>ログアウト</li>
+          <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
           <!--共通ログアウト-->
           <% else %>
           <li><%= link_to "About", about_path %></li>
