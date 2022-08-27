@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  scope module: 'public' do
+    resources :items, only: [:index, :show]
+  end
+
   devise_for :customers, skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
