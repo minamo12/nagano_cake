@@ -1,2 +1,33 @@
-<h1>Customers#edit</h1>
-<p>Find me in app/views/customers/edit.html.erb</p>
+<h1><%= @customer.first_name %><%= @customer.last_name %>さんの会員情報編集</h1>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>会員ID</th>
+        <th>氏名</th>
+        <th>フリガナ</th>
+        <th>郵便番号</th>
+        <th>住所</th>
+        <th>電話番号</th>
+        <th>メールアドレス</th>
+        <th>会員ステータス</th>
+      </tr>
+    </thead>
+
+    <%= form_with model: @customer, url: admin_customers_path(@customer.id) do |f| %>
+    <tbody>
+      <tr>
+        <td><%= @customer.id %></td>
+        <td><%= f.text_field :first_name %> <%= f.text_field :last_name %></td>
+        <td><%= f.text_field :first_name_kana %> <%= f.text_field :last_name_kana %></td>
+        <td><%= f.number_field :postal_code %></td>
+        <td><%= f.text_area :address %></td>
+        <td><%= f.number_field :telephone_number %></td>
+        <td><%= f.text_field :email %></td>
+        <td>ステータス</td>
+      </tr>
+    </tbody>
+    <% end %>
+
+  </table>
