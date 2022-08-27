@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe' => 'customers#unsubscribe'
     patch 'customers/withdraw'  => 'customers#withdraw'
 
+    #cart_items
+    resources :cart_items, only: [:index, :update, :destroy, :create]
+    delete 'cart_items/destroy_all' => 'cart_items#destroy_all'
+
   end
 
   devise_for :customers, skip: [:passwords], controllers: {
