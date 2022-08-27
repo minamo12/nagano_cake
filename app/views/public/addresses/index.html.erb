@@ -38,7 +38,7 @@
       <td><%= address.postal_code %></td>
       <td><%= address.address %></td>
       <td><%= address.name %></td>
-      <td>編集する　削除する</td>
+      <td><%= link_to "編集する", edit_address_path(address.id) %>　削除する</td>
     </tr>
   </tbody>
   <% end %>
