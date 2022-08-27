@@ -1,10 +1,20 @@
 Rails.application.routes.draw do
 
-
   scope module: 'public' do
-    resources :items, only: [:index, :show]
+    # homes
     root to: 'homes#top'
     get 'homes/about' => 'homes#about', as: 'about'
+
+    #items
+    resources :items, only: [:index, :show]
+
+    # customers
+    get 'customers/my_page' => 'customers#show'
+    get 'customers/infomation/edit' => 'customers#edit'
+    patch 'customers/infomation' => 'customers#update'
+    get 'customers/unsubscribe' => 'customers#unsubscribe'
+    patch 'customers/withdraw'  => 'customers#withdraw'
+
   end
 
   devise_for :customers, skip: [:passwords], controllers: {
