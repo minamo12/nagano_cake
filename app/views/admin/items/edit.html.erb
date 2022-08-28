@@ -29,6 +29,14 @@
 
 <div>
   <label>販売ステータス</label>
+  <div>
+    <label>販売中</label>
+    <%= f.radio_button :is_active, true %>
+  </div>
+  <div>
+    <label>販売停止中</label>
+    <%= f.radio_button :is_active, false %>
+  </div>
 </div>
 
 <div>
