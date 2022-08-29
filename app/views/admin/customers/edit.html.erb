@@ -1,7 +1,7 @@
 <h1><%= @customer.first_name %><%= @customer.last_name %>さんの会員情報編集</h1>
 
 
-<%= form_with model: @customer, url: admin_customers_path(@customer.id), method: :patch do |f| %>
+<%= form_with model: @customer, url: admin_customer_path(@customer.id), method: :patch do |f| %>
 
 <div>
   <label>会員ID</label>
