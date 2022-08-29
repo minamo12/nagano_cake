@@ -39,7 +39,15 @@
 </div>
 
 <div>
-  <label>ステータス</label>
+  <label>会員ステータス</label>
+  <div>
+    <%= f.radio_button :is_active, true %>
+    <label>有効</label>
+  </div>
+  <div>
+    <%= f.radio_button :is_active, false %>
+    <label>退会</label>
+  </div>
 </div>
 
 <div>
