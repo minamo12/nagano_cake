@@ -12,4 +12,14 @@
 
 <h1>新着商品</h1>
 
-<div></div>
+<% @items.each do |item| %>
+
+<div>
+  <%= link_to(item_path(item.id)) do %>
+    <%= image_tag item.get_image(50,50) %>
+  <% end %>
+</div>
+<div><%= item.name %></div>
+<div>￥<%= item.price %></div>
+
+<% end %>
