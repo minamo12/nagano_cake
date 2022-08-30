@@ -1,6 +1,12 @@
 
+
 <div><%= image_tag @item.get_image(50,50) %></div>
-<div><%= @item.price %></div>
+<div><%= @item.name %></div>
+<div><%= @item.introduction %></div>
+<div><%= @item.with_tax_price %>(税込)</div>
 
 <div>個数選択</div>
-<div>カートに入れる</div>
+<%= form_with model: @cart_item do |f| %>
+  <%= f.select :amount, [["1","1"],["2","2"],["3","3"]], include_blank: "個数選択" %>
+  <%= f.submit "カートに入れる" %>
+<% end %>
