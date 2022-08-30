@@ -14,11 +14,17 @@ class Public::CustomersController < ApplicationController
     redirect_to customers_my_page_path
   end
 
+  def withdraw
+    @customer = current_customer
+    @customer.update(customer_params)
+    redirect_to root_path
+  end
+
   private
 
   def customer_params
     params.require(:customer).permit(:first_name, :last_name,
-    :first_name_kana, :last_name_kana, :email, :postal_code, :address, :telephone_number)
+    :first_name_kana, :last_name_kana, :email, :postal_code, :address, :telephone_number, :is_active)
   end
 
 end
