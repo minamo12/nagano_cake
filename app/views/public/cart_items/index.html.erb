@@ -25,11 +25,17 @@
           <% end %>
         </div>
       </td>
-      <td><%= cart_item.item.with_tax_price * cart_item.amount %></td>
+      <td><%= cart_item.subtotal %></td>
+      <% @total += cart_item.subtotal %>
       <td><%= link_to "削除する", cart_item_path(cart_item.id), method: :delete %></td>
     </tr>
     <% end %>
   </tbody>
 
 </table>
+
+<div>
+  <label>合計金額</label>
+  <%= @total %>
+</div>
 
