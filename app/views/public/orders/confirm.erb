@@ -1,7 +1,50 @@
 
+<h1>注文情報確認</h1>
+
+
 <div>
-  <% @cart_items.each do |cart_item| %>
-    <%= cart_item.item.name %>
-  <% end %>
+  <table>
+    <thead>
+      <tr>商品名</tr>
+      <tr>単価(税込み)</tr>
+      <tr>数量</tr>
+      <tr>小計</tr>
+    </thead>
+    <% @cart_items.each do |cart_item| %>
+    <tbody>
+      <tr>
+        <td><%= cart_item.item.name %></td>
+        <td><%= cart_item.item.with_tax_price %></td>
+        <td><%= cart_item.amount %></td>
+        <td><%= cart_item.subtotal %></td>
+        <% @total += cart_item.subtotal %>
+      </tr>
+    </tbody>
+    <% end %>
+  </table>
 </div>
 
+<div>
+  <div>
+    <label>送料</label>
+    <%= @order.shipping_cost %>
+  </div>
+  <div>
+    <label>商品合計</label>
+    <%= @total %>
+  </div>
+  <div>
+    <label>請求金額</label>
+    <%= @order.total_payment = @total + @order.shipping_cost %>
+  </div>
+</div>
+
+<div>
+  支払い方法
+  <%= @order.payment_method %>
+</div>
+
+<div>
+  お届け先
+  <%= @order.address_display %>
+</div>

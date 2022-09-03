@@ -10,7 +10,11 @@ class Order < ApplicationRecord
   end
 
   def subtotal
-    item.with_tax_price * amount
+    cart_item.with_tax_price * amount
+  end
+
+  def address_display
+    '〒' + postal_code + ' ' + address + ' ' + name
   end
 
 end

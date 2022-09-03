@@ -17,7 +17,7 @@ class Public::OrdersController < ApplicationController
     @order.shipping_cost = 800
     @total = 0
     @cart_items = current_customer.cart_items
-    @order.total_payment = @total
+    @order.total_payment = 0
     #0 自分の住所
     if params[:order][:select_address] == "0"
       @order.postal_code = current_customer.postal_code
