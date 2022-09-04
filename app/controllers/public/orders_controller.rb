@@ -5,6 +5,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
+    @orders = Order.all
   end
 
   def show
@@ -39,6 +40,7 @@ class Public::OrdersController < ApplicationController
     @order.customer_id = current_customer.id
     @order.shipping_cost = 800
     @order.save
+    redirect_to orders_complete_path
   end
 
   private
