@@ -39,7 +39,9 @@ class Public::OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.customer_id = current_customer.id
     @order.shipping_cost = 800
-    @order.save
+    if @order.save #注文機能への格納が成功したら詳細への格納を開始
+    else
+    end
     redirect_to orders_complete_path
   end
 
