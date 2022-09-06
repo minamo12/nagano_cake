@@ -1,2 +1,67 @@
-<h1>Admin::Orders#show</h1>
-<p>Find me in app/views/admin/orders/show.html.erb</p>
+<h1>注文履歴詳細</h1>
+
+<div>
+  <label>購入者</label>
+  <%= @order.customer.first_name %><%= @order.customer.last_name %>
+</div>
+
+<div>
+  <label>注文日</label>
+  <%= @order.created_at.strftime('%Y/%m/%d') %>
+</div>
+
+<div>
+  <label>配送先</label>
+  <%= @order.address_display %>
+</div>
+
+<div>
+  <label>支払い方法</label>
+  <%= @order.payment_method %>
+</div>
+
+<div>
+  <label>注文ステータス</label>
+  <%= @order.status %>
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>商品名</th>
+      <th>単価(税込み)</th>
+      <th>数量</th>
+      <th>小計</th>
+      <th>製作ステータス</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @order_details.each do |order_detail| %>
+    <tr>
+      <td><%= order_detail.item.name %></td>
+      <td><%= order_detail.with_tax_price %></td>
+      <td><%= order_detail.amount %></td>
+      <td><%= order_detail.subtotal %></td>
+      <td><%= order_detail.making_status %></td>
+      <td></td>
+    </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<div>
+  <label>商品合計</label>
+</div>
+
+<div>
+  <label>送料</label>
+</div>
+
+<div>
+  <label>請求金額合計</label>
+</div>
