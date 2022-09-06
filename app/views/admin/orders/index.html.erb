@@ -15,8 +15,7 @@
       <tr>
         <td><%= order.created_at %></td>
         <td><%= order.customer.last_name %><%= order.customer.first_name %></td>
-        <td><%= @total_amount %>
-        </td>
+        <td><%= order.order_details.count %></td>
         <td><%= order.status %></td>
       </tr>
     </tbody>
