@@ -47,6 +47,7 @@
       <td><%= order_detail.amount %></td>
       <td><%= order_detail.subtotal %></td>
       <td><%= order_detail.making_status %></td>
+      <% @total += order_detail.subtotal %>
       <td></td>
     </tr>
     <% end %>
@@ -56,12 +57,15 @@
 
 <div>
   <label>商品合計</label>
+  <%= @total %>
 </div>
 
 <div>
   <label>送料</label>
+  <%= @shipping_cost %>
 </div>
 
 <div>
   <label>請求金額合計</label>
+  <%= @total + @shipping_cost %>
 </div>
