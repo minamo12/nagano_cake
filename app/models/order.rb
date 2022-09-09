@@ -11,7 +11,7 @@ class Order < ApplicationRecord
   end
 
   def subtotal
-    cart_item.with_tax_price * amount
+    with_tax_price * amount
   end
 
   def address_display

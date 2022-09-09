@@ -4,7 +4,7 @@
   <h4>注文情報</h4>
   <div>
     <label>注文日</label>
-    <%= @order.created_atstrftime('%Y/%m/%d') %>
+    <%= @order.created_at.strftime('%Y/%m/%d') %>
   </div>
   <div>
     <label>配送先</label>

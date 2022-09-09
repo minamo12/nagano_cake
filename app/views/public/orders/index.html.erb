@@ -12,14 +12,26 @@
     </tr>
   </thead>
 
+  <% @orders.each do |order| %>
+
   <tbody>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <% if order.customer_id == current_customer.id %>
+      <td><%= order.created_at.strftime('%Y/%m/%d') %></td>
+      <td><%= order.address_display %></td>
+      <td>
+        <% order.order_details.each do |order_detail| %>
+        <%= order_detail.item.name %>
+        <% @total += order_detail.subtotal %>
+        <% end %>
+      </td>
+      <td><%= @total %></td>
+      <td><%= order.status %></td>
+      <td><%= link_to "表示する", order_path(order.id) %></td>
+      <% end %>
     </tr>
   </tbody>
+  <% end %>
+
 </table>
+

@@ -6,6 +6,8 @@ class Public::OrdersController < ApplicationController
 
   def index
     @orders = Order.all
+    @total = 0
+    #binding.pry
   end
 
   def show
