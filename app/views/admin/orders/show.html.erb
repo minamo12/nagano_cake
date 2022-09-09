@@ -2,7 +2,9 @@
 
 <div>
   <label>購入者</label>
-  <%= @order.customer.first_name %><%= @order.customer.last_name %>
+  <%= link_to(admin_customers_path(@order.customer.id)) do %>
+    <%= @order.customer.first_name %><%= @order.customer.last_name %>
+  <% end %>
 </div>
 
 <div>

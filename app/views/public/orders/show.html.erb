@@ -1,2 +1,56 @@
-<h1>Public::Orders#show</h1>
-<p>Find me in app/views/public/orders/show.html.erb</p>
+<h1>注文履歴詳細</h1>
+
+<div>
+  <h4>注文情報</h4>
+  <div>
+    <label>注文日</label>
+    <%= @order.created_atstrftime('%Y/%m/%d') %>
+  </div>
+  <div>
+    <label>配送先</label>
+    <%= @order.address_display %>
+  </div>
+  <div>
+    <label>支払方法</label>
+    <%= @order.payment_method_i18n %>
+  </div>
+  <div>
+    <label>ステータス</label>
+    <%= @order.status %>
+  </div>
+</div>
+
+<div>
+  <h4>請求情報</h4>
+  <div>
+    <label>商品合計</label>
+  </div>
+  <div>
+    <label>配送料</label>
+  </div>
+  <div>
+    <label>ご請求額</label>
+  </div>
+</div>
+
+<div>
+  <h4>注文内容</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>商品</th>
+        <th>単価(税込)</th>
+        <th>個数</th>
+        <th>小計</th>
+      </tr>
+    </thead>
+
+    <tbodu>
+      <tr>
+        <td></td>
+      </tr>
+    </tbodu>
+  </table>
+
+
+</div>

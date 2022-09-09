@@ -1,7 +1,4 @@
-<h1>注文履歴</h1>
-
-
-
+<h1>注文履歴一覧</h1>
 
 <div>
   <table>
@@ -20,7 +17,7 @@
         <td><%= order.customer.last_name %><%= order.customer.first_name %></td>
         <% @amount = @total_amount.find_by(order_id: order.id) %>
         <td><%= @amount.sum_amount %></td>
-        <td><%= order.status %></td>
+        <td><%= order.status_i18n %></td>
       </tr>
     </tbody>
     <% end %>
