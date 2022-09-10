@@ -2,6 +2,8 @@ class Public::OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @orders = Order.all
+    @addresses = Address.all
   end
 
   def index
