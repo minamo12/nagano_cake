@@ -19,12 +19,15 @@
 
 <div>
   <label>支払い方法</label>
-  <%= @order.payment_method %>
+  <%= @order.payment_method_i18n %>
 </div>
 
 <div>
   <label>注文ステータス</label>
-  <%= @order.status %>
+  <%= form_with model: @order, url: admin_order_path(@order.id), method: :patch do |f| %>
+  <%= f.select :status, Order.statuses.keys.map {|k| [I18n.t("enums.order.status.#{k}"), k]} %>
+  <%= f.submit "更新" %>
+  <% end %>
 </div>
 
 
@@ -35,7 +38,7 @@
       <th>単価(税込み)</th>
       <th>数量</th>
       <th>小計</th>
-      <th>製作ステータス</th>
+      <th>注文ステータス</th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -48,7 +51,12 @@
       <td><%= order_detail.with_tax_price %></td>
       <td><%= order_detail.amount %></td>
       <td><%= order_detail.subtotal %></td>
-      <td><%= order_detail.making_status %></td>
+      <td>
+        <%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), method: :patch do |f| %>
+          <%= f.select :making_status, OrderDetail.making_statuses.keys.map {|k| [I18n.t("enums.order_detail.making_status.#{k}"), k]} %>
+          <%= f.submit "更新" %>
+        <% end %>
+      </td>
       <% @total += order_detail.subtotal %>
       <td></td>
     </tr>

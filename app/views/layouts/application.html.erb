@@ -16,6 +16,10 @@
       <div>
         <!--ロゴ-->
         <div><%= link_to "LOGO", root_path %></div>
+        <!--ようこそ〇〇さん-->
+        <% if customer_signed_in? %>
+        <div>ようこそ、<%= current_customer.first_name %>さん！</div>
+        <% end %>
         <ul>
           <!--管理者ログイン-->
           <% if admin_signed_in? %>
