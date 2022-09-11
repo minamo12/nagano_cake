@@ -8,7 +8,9 @@
   </div>
   <div>
     <label>配送先</label>
-    <%= @order.address_display %>
+    〒 <%= @order.postal_code %><br>
+    <%= @order.address %><br>
+    <%= @order.name %>
   </div>
   <div>
     <label>支払方法</label>
@@ -16,20 +18,7 @@
   </div>
   <div>
     <label>ステータス</label>
-    <%= @order.status %>
-  </div>
-</div>
-
-<div>
-  <h4>請求情報</h4>
-  <div>
-    <label>商品合計</label>
-  </div>
-  <div>
-    <label>配送料</label>
-  </div>
-  <div>
-    <label>ご請求額</label>
+    <%= @order.status_i18n %>
   </div>
 </div>
 
@@ -45,12 +34,34 @@
       </tr>
     </thead>
 
+    <% @order.order_details.each do |order_detail| %>
+
     <tbodu>
       <tr>
-        <td></td>
+        <td><%= order_detail.item.name %></td>
+        <td><%= order_detail.item.with_tax_price %></td>
+        <td><%= order_detail.amount %></td>
+        <td><%= order_detail.subtotal %></td>
+        <% @total += order_detail.subtotal %>
       </tr>
     </tbodu>
+    <% end %>
   </table>
+</div>
 
 
+<div>
+  <h4>請求情報</h4>
+  <div>
+    <label>商品合計</label>
+    <%= @total %>
+  </div>
+  <div>
+    <label>配送料</label>
+    <%= @shipping_cost %>
+  </div>
+  <div>
+    <label>ご請求額</label>
+    <%= @total + @shipping_cost %>
+  </div>
 </div>

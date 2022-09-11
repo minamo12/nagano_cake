@@ -14,6 +14,8 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @total = 0
+    @shipping_cost = 800
   end
 
   def confirm
@@ -56,7 +58,7 @@ class Public::OrdersController < ApplicationController
     else
     end
     current_customer.cart_items.destroy_all
-    redirect_to orders_complete_path
+    redirect_to order_complete_path
   end
 
   private
