@@ -3,8 +3,7 @@ table {
 }
 
 th, td {
-  border: solid 1px;
-  padding: 5px 60px 5px 3px;
+  padding: 10px 60px 10px 5px;
 }
 
 th {
@@ -21,19 +20,41 @@ h4 {
   font-weight: bold;
 }
 
+.bottom-border {
+  border-bottom: solid 1px #eee;
+}
+
 .btn-size {
   padding: 5px 30px;
 }
 
 /*要素を真ん中に配置*/
 .center {
-  margin: 0 100px;
+  margin: 0 auto;
   width: 100%;
+}
+
+.page {
+  display: inline-block;
+}
+
+.width100 {
+  margin: 0 auto;
+  text-align: center;
 }
 
 /*太字にする*/
 .font_weight {
   font-weight: bold;
+}
+.flex {
+  display: flex;
+}
+
+.right {
+  margin-right: 0;
+  margin-left: auto;
+  width: 20%;
 }
 
 /*下に空白*/
@@ -46,3 +67,28 @@ h4 {
   margin-bottom: 30px;
 }
 
+.table-boder {
+  border: solid 1px;
+}
+
+.maru {
+  border-radius: 50%;
+  padding: 5px;
+  background-color: White;
+}
+
+.shadow {
+  filter: drop-shadow(2px 2px 0px #c0c0c0);
+}
+
+.red {
+  color: red;
+}
+
+.true {
+  color: #00CC33;
+}
+
+.false {
+  color: gray;
+}

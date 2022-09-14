@@ -4,7 +4,7 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field row space_15">
       <%= f.label :メールアドレス, class: 'col-3' %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'col-5' %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "sumple.@example.com", class: 'col-5' %>
     </div>
 
     <div class="field row space_30">
