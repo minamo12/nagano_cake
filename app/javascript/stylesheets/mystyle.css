@@ -12,11 +12,8 @@ th {
   font-weight: normal;
 }
 
-.font_weight {
-  font-weight: bold;
-}
-
-.title {
+/*タイトルに使用*/
+h4 {
   background-color: #eee;
   display: inline-block;
   padding: 3px 30px;
@@ -24,10 +21,27 @@ th {
   font-weight: bold;
 }
 
+.btn-size {
+  padding: 5px 30px;
+}
+
+/*要素を真ん中に配置*/
+.center {
+  margin: 0 100px;
+  width: 100%;
+}
+
+/*太字にする*/
+.font_weight {
+  font-weight: bold;
+}
+
+/*下に空白*/
 .space_15 {
   margin-bottom: 15px;
 }
 
+/*↑の多め*/
 .space_30 {
   margin-bottom: 30px;
 }
