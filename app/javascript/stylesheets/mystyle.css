@@ -8,7 +8,6 @@ th, td {
 
 th {
   background-color: #eee;
-  font-weight: normal;
 }
 
 /*タイトルに使用*/
@@ -20,8 +19,17 @@ h4 {
   font-weight: bold;
 }
 
-.bottom-border {
+a {
+  text-decoration: underline;
+}
+
+.black-link {
+  color: black;
+}
+
+.top-bottom-border {
   border-bottom: solid 1px #eee;
+  border-top: solid 1px silver;
 }
 
 .btn-size {
@@ -36,9 +44,10 @@ h4 {
 
 .page {
   display: inline-block;
+  margin: 0 5px;
 }
 
-.width100 {
+.text-center {
   margin: 0 auto;
   text-align: center;
 }
@@ -57,6 +66,11 @@ h4 {
   width: 20%;
 }
 
+.font-size {
+  font-size: 30px;
+  color: gray;
+}
+
 /*下に空白*/
 .space_15 {
   margin-bottom: 15px;
@@ -73,7 +87,7 @@ h4 {
 
 .maru {
   border-radius: 50%;
-  padding: 5px;
+  padding: 7px;
   background-color: White;
 }
 
@@ -86,9 +100,9 @@ h4 {
 }
 
 .true {
-  color: #00CC33;
+  color: #00CC00;
 }
 
 .false {
-  color: gray;
+  color: #bbb;
 }

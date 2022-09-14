@@ -4,17 +4,17 @@
 
 <div class="right">
   <%= link_to(new_admin_item_path, class: 'shadow') do %>
-    <i class="fa-regular fa-plus maru"></i>
+    <i class="fa-regular fa-plus maru font-size"></i>
   <% end %>
 </div>
 </div>
 
-<table class="bottom-border center space_30">
+<table class="top-bottom-border center space_15">
   <thead>
     <tr>
       <th>商品ID</th>
       <th>商品名</th>
-      <th>税抜き価格</th>
+      <th>税抜価格</th>
       <th>ジャンル</th>
       <th>ステータス</th>
     </tr>
@@ -24,7 +24,7 @@
   <tbody>
     <tr>
       <td><%= item.id %></td>
-      <td><%= link_to item.name, admin_item_path(item.id) %></td>
+      <td><%= link_to item.name, admin_item_path(item.id), class: 'black-link' %></td>
       <td><%= item.price.to_s(:delimited, delimiter: ",") %></td>
       <td><%= item.genre.name %></td>
       <td>
@@ -40,7 +40,7 @@
 
 </table>
 
-<div class="width100">
+<div class="text-center">
   <div class="page">
     <%= paginate @items %>
   </div>

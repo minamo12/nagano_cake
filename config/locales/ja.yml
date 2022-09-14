@@ -16,3 +16,8 @@ ja:
         making_waiting: "製作待ち"
         making: "制作中"
         making_completed: "製作完了"
+
+  views:
+    pagination:
+      last: "Last >>"
+      next: "Next > "
