@@ -63,6 +63,10 @@ a {
   padding: 5px 30px;
 }
 
+.none-border {
+  border: none;
+}
+
 /*配置*/
 
 .center {
