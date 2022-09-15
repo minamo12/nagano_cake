@@ -23,36 +23,10 @@ a {
   text-decoration: underline;
 }
 
-.black-link {
-  color: black;
-}
+/*フォント・文字*/
 
 .big-font {
   font-size: 20px;
-}
-
-.top-bottom-border {
-  border-bottom: solid 1px #eee;
-  border-top: solid 1px silver;
-}
-
-.btn-size {
-  padding: 5px 30px;
-}
-
-/*要素を真ん中に配置*/
-.center {
-  margin: 0 auto;
-  width: 100%;
-}
-
-.form-center {
-  width: 70%;
-}
-
-.page {
-  display: inline-block;
-  margin: 0 5px;
 }
 
 .text-center {
@@ -60,10 +34,42 @@ a {
   text-align: center;
 }
 
-/*太字にする*/
+.top-bottom-text-center {
+  vertical-align: middle;
+  width: 200px;
+}
+
 .font_weight {
   font-weight: bold;
 }
+
+.font-size {
+  font-size: 30px;
+  color: gray;
+}
+
+/*ボーダー*/
+
+.top-bottom-border {
+  border-bottom: solid 1px #eee;
+  border-top: solid 1px silver;
+}
+
+.bottom-border {
+  border-bottom: solid 1px #eee;
+}
+
+.btn-size {
+  padding: 5px 30px;
+}
+
+/*配置*/
+
+.center {
+  margin: 0 auto;
+  width: 100%;
+}
+
 .flex {
   display: flex;
 }
@@ -78,28 +84,62 @@ a {
   width: 20%;
 }
 
-.font-size {
-  font-size: 30px;
-  color: gray;
+.width-100 {
+  width: 100%;
 }
 
-/*下に空白*/
+/*ページ*/
+
+.page {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+/*リンク*/
+
+.black-link {
+  color: black;
+}
+
+/*調整空白*/
+
 .space_15 {
   margin-bottom: 15px;
 }
 
-/*↑の多め*/
 .space_30 {
   margin-bottom: 30px;
 }
+
+.right-space {
+  margin-right: 20px;
+}
+
+.right-space-big {
+  margin-right: 50px;
+}
+
+.genre-space {
+  padding-right: 0;
+}
+
+/*フォーム*/
 
 .form-big {
   height: 100px;
 }
 
+.form-center {
+  width: 70%;
+}
+
+/*テーブル*/
+
 .table-boder {
   border: solid 1px;
 }
+
+/*アイコン*/
 
 .maru {
   border-radius: 50%;
@@ -107,16 +147,15 @@ a {
   background-color: White;
 }
 
+
+/*装飾*/
+
 .shadow {
   filter: drop-shadow(2px 2px 0px #c0c0c0);
 }
 
 .red {
   color: red;
-}
-
-.right-space {
-  margin-right: 20px;
 }
 
 .true {
@@ -127,16 +166,7 @@ a {
   color: #bbb;
 }
 
-.top-bottom-text-center {
-  vertical-align: middle;
-  width: 200px;
-}
-
-.width-100 {
-  width: 100%;
-}
-
-
+/**/
 
 .test {
   background-color: red
