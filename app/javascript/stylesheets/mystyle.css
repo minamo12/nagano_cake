@@ -27,6 +27,10 @@ a {
   color: black;
 }
 
+.big-font {
+  font-size: 20px;
+}
+
 .top-bottom-border {
   border-bottom: solid 1px #eee;
   border-top: solid 1px silver;
@@ -40,6 +44,10 @@ a {
 .center {
   margin: 0 auto;
   width: 100%;
+}
+
+.form-center {
+  width: 70%;
 }
 
 .page {
@@ -58,6 +66,10 @@ a {
 }
 .flex {
   display: flex;
+}
+
+.inline {
+  display: inline;
 }
 
 .right {
@@ -81,6 +93,10 @@ a {
   margin-bottom: 30px;
 }
 
+.form-big {
+  height: 100px;
+}
+
 .table-boder {
   border: solid 1px;
 }
@@ -99,10 +115,29 @@ a {
   color: red;
 }
 
+.right-space {
+  margin-right: 20px;
+}
+
 .true {
   color: #00CC00;
 }
 
 .false {
   color: #bbb;
+}
+
+.top-bottom-text-center {
+  vertical-align: middle;
+  width: 200px;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+
+
+.test {
+  background-color: red
 }
