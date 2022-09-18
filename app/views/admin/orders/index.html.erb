@@ -1,7 +1,7 @@
 <h1>注文履歴一覧</h1>
 
-<div>
-  <table>
+<div class="flex">
+  <table class="no-deco">
     <thead>
       <tr>
         <th>購入日時</th>
@@ -13,7 +13,7 @@
     <% @orders.each do |order| %>
     <tbody>
       <tr>
-        <td><%= link_to order.created_at.strftime('%Y/%m/%d %H:%M'), admin_order_path(order.id) %></td>
+        <td><%= link_to order.created_at.strftime('%Y/%m/%d %H:%M'), admin_order_path(order.id), class: 'black-link' %></td>
         <td><%= order.customer.last_name %><%= order.customer.first_name %></td>
         <% @amount = @total_amount.find_by(order_id: order.id) %>
         <td><%= @amount.sum_amount %></td>
@@ -24,6 +24,9 @@
   </table>
 </div>
 
-<br>
-
+  <div class="text-center">
+    <div class="page">
+      <%= paginate @orders %>
+    </div>
+  </div>
 
