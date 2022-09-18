@@ -137,6 +137,11 @@ a {
   width: 70%;
 }
 
+.form-long {
+  width: 500px;
+  height: 30px;
+}
+
 /*テーブル*/
 
 .table-boder {

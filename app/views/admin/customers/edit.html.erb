@@ -1,48 +1,48 @@
-<h1><%= @customer.first_name %><%= @customer.last_name %>さんの会員情報編集</h1>
+<h4><%= @customer.first_name %><%= @customer.last_name %>さんの会員情報編集</h4>
 
 
 <%= form_with model: @customer, url: admin_customer_path(@customer.id), method: :patch do |f| %>
 
 <div>
-  <label>会員ID</label>
+  <label class="col-2">会員ID</label>
   <%= @customer.id %>
 </div>
 
 <div>
-  <label>氏名</label>
-  <%= f.text_field :first_name %> <%= f.text_field :last_name %>
+  <label class="col-2">氏名</label>
+  <%= f.text_field :first_name, class: "right-space" %> <%= f.text_field :last_name %>
 </div>
 
 <div>
-  <label>フリガナ</label>
-  <%= f.text_field :first_name_kana %> <%= f.text_field :last_name_kana %>
+  <label class="col-2">フリガナ</label>
+  <%= f.text_field :first_name_kana, class: "right-space" %> <%= f.text_field :last_name_kana %>
 </div>
 
 <div>
-  <label>郵便番号</label>
+  <label class="col-2">郵便番号</label>
   <%= f.number_field :postal_code %>
 </div>
 
 <div>
-  <label>住所</label>
-  <%= f.text_area :address %>
+  <label class="col-2">住所</label>
+  <%= f.text_area :address, class: "form-long" %>
 </div>
 
 <div>
-  <label>電話番号</label>
+  <label class="col-2">電話番号</label>
   <%= f.number_field :telephone_number %>
 </div>
 
 <div>
-  <label>メールアドレス</label>
+  <label class="col-2">メールアドレス</label>
   <%= f.text_field :email %>
 </div>
 
-<div>
-  <label>会員ステータス</label>
+<div class="flex space_30">
+  <label class="col-2">会員ステータス</label>
   <div>
     <%= f.radio_button :is_active, true %>
-    <label>有効</label>
+    <label class="right-space">有効</label>
   </div>
   <div>
     <%= f.radio_button :is_active, false %>
@@ -50,8 +50,9 @@
   </div>
 </div>
 
-<div>
-  <%= f.submit '変更を保存' %>
+<div class="row">
+  <div class="col-2"></div>
+  <%= f.submit '変更を保存', class: 'btn btn-success col-2' %>
 </div>
 
 <% end %>
