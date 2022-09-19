@@ -92,6 +92,10 @@ a {
   width: 100%;
 }
 
+.bottom {
+  text-align: end;
+}
+
 /*ページ*/
 
 .page {
@@ -127,6 +131,17 @@ a {
   padding-right: 0;
 }
 
+.top-area {
+  width: 600px;
+  height: 300px;
+  padding: 50px ;
+}
+
+.top-p-area {
+  width: 400px;
+  height: 150px;
+  padding: 20px 0;
+}
 /*フォーム*/
 
 .form-big {
@@ -178,6 +193,10 @@ a {
 
 .false {
   color: #bbb;
+}
+
+.outline {
+  border: solid 1px;
 }
 
 /**/
