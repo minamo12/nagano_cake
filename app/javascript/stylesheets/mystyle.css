@@ -29,6 +29,10 @@ a {
   font-size: 20px;
 }
 
+.bigbig-font {
+  font-size: 70px;
+}
+
 .text-center {
   margin: 0 auto;
   text-align: center;
