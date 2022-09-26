@@ -1,56 +1,56 @@
 
-<div class="container">
+<div>
 
-  <h4 class="ml-5">マイページ</h4>
+  <h4>マイページ</h4>
 
   <div>
-    <div class="row space_15">
-        <h4 class="col-2 font_weight">登録情報</h4>
-        <%= link_to "編集する", customers_infomation_edit_path, class: 'btn btn-success' %>
+    <div class="space_15 flex">
+      <div class="big-font font_weight col-2">登録情報</div>
+      <%= link_to "編集する", customers_infomation_edit_path, class: 'btn btn-success' %>
     </div>
 
     <table class="space_30">
 
       <tr>
-        <th>氏名</th>
-        <td><%= @customer.first_name %>　<%= @customer.last_name %></td>
+        <th class="table-boder">氏名</th>
+        <td class="table-boder"><%= @customer.first_name %>　<%= @customer.last_name %></td>
       </tr>
 
       <tr>
-        <th>カナ</th>
-        <td><%= @customer.first_name_kana %>　<%= @customer.last_name_kana %></td>
+        <th class="table-boder">カナ</th>
+        <td class="table-boder"><%= @customer.first_name_kana %>　<%= @customer.last_name_kana %></td>
       </tr>
 
       <tr>
-        <th>郵便番号</th>
-        <td><%= @customer.postal_code %></td>
+        <th class="table-boder">郵便番号</th>
+        <td class="table-boder"><%= @customer.postal_code %></td>
       </tr>
 
       <tr>
-        <th>住所</th>
-        <td><%= @customer.address %></td>
+        <th class="table-boder">住所</th>
+        <td class="table-boder"><%= @customer.address %></td>
       </tr>
 
       <tr>
-        <th>電話番号</th>
-        <td><%= @customer.telephone_number %></td>
+        <th class="table-boder">電話番号</th>
+        <td class="table-boder"><%= @customer.telephone_number %></td>
       </tr>
 
       <tr>
-        <th>メールアドレス</th>
-        <td><%= @customer.email %></td>
+        <th class="table-boder">メールアドレス</th>
+        <td class="table-boder"><%= @customer.email %></td>
       </tr>
 
     </table>
 
-    <div class="row space_15">
-      <h4 class="col-2 font_weight">配送先</h4>
-      <%= link_to "一覧を見る", addresses_path, class: 'btn btn-primary col-2' %>
+    <div class="flex space_15">
+      <div class="big-font font_weight col-2">配送先</div>
+      <%= link_to "一覧を見る", addresses_path, class: 'btn btn-primary' %>
     </div>
 
-    <div class="row space_15">
-      <h4 class="col-2 font_weight">注文履歴</h4>
-      <%= link_to "一覧を見る", orders_path, class: 'btn btn-primary col-2' %>
+    <div class="flex">
+      <div class="big-font font_weight col-2">注文履歴</div>
+      <%= link_to "一覧を見る", orders_path, class: 'btn btn-primary' %>
     </div>
 
   </div>
