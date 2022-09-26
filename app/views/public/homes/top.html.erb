@@ -22,7 +22,7 @@
 
   <div>
     <%= link_to(item_path(item.id)) do %>
-      <%= image_tag item.get_image(200, 150) %>
+      <%= image_tag item.get_image(300, 150), class: 'picture-size' %>
     <% end %>
   </div>
   <div><%= item.name %></div>
