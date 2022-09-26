@@ -142,6 +142,10 @@ a {
 
 /*調整空白*/
 
+.space_5 {
+  margin-bottom: 5px;
+}
+
 .space_15 {
   margin-bottom: 15px;
 }
