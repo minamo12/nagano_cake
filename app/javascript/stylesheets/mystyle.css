@@ -4,6 +4,7 @@ table {
 
 th, td {
   padding: 10px 5px;
+  border: solid 1px;
 }
 
 th {
@@ -216,10 +217,6 @@ a {
 
 /*テーブル*/
 
-.table-boder {
-  border: solid 1px;
-}
-
 .no-deco {
   background-color: initial;
   font-weight: initial;
@@ -308,6 +305,10 @@ a {
 
 .width-40p {
   width: 40%;
+}
+
+.width-30p {
+  width: 30%;
 }
 
 .width-35p {
