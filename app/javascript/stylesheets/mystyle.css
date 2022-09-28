@@ -3,7 +3,7 @@ table {
 }
 
 th, td {
-  padding: 10px 60px 10px 5px;
+  padding: 10px 5px;
 }
 
 th {
@@ -119,6 +119,11 @@ a {
   margin-left: auto;
 }
 
+.right-and-bottom {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
 .width-100 {
   width: 100%;
 }
@@ -225,10 +230,6 @@ a {
   text-align: center;
 }
 
-.none-padding {
-  padding: 10px 5px;
-}
-
 /*アイコン*/
 
 .maru {
@@ -292,12 +293,25 @@ a {
   width: 90%;
 }
 
+.width-70p {
+  width: 70%;
+}
+
 .width-60p {
   width: 60%;
 }
 
+.width-50p {
+  width: 50%;
+}
+
+
 .width-40p {
   width: 40%;
+}
+
+.width-35p {
+  width: 35%;
 }
 
 .width-20p {
@@ -306,6 +320,10 @@ a {
 
 .width-15p {
   width: 15%;
+}
+
+.width-10p {
+  width: 10%;
 }
 
 /**/
