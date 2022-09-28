@@ -36,6 +36,15 @@ a {
   text-decoration: underline;
 }
 
+main {
+  height: 600px;
+}
+
+footer {
+  border-top: solid 1px;
+  margin-top: 10px;
+}
+
 /*フォント・文字*/
 
 .big-font {
