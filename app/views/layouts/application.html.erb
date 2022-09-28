@@ -16,33 +16,35 @@
 
       <div>
         <!--ロゴ-->
-        <div><%= link_to "LOGO", root_path %></div>
+        <h1><%= link_to "LOGO", root_path, class: 'logo' %></h1>
         <!--ようこそ〇〇さん-->
         <% if customer_signed_in? %>
-        <div>ようこそ、<%= current_customer.first_name %>さん！</div>
+        <div class="welcome">ようこそ、<%= current_customer.first_name %>さん！</div>
         <% end %>
-        <ul>
-          <!--管理者ログイン-->
-          <% if admin_signed_in? %>
-          <li><%= link_to "商品一覧", admin_items_path %></li>
-          <li><%= link_to "会員一覧", admin_customers_path %></li>
-          <li><%= link_to "注文履歴一覧", admin_orders_path %></li>
-          <li><%= link_to "ジャンル一覧", admin_genres_path %></li>
-          <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
-          <!--会員ログイン-->
-          <% elsif customer_signed_in? %>
-          <li><%= link_to "マイページ", customers_my_page_path %></li>
-          <li><%= link_to "商品一覧", items_path %></li>
-          <li><%= link_to "カート", cart_items_path %></li>
-          <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete %></li>
-          <!--共通ログアウト-->
-          <% else %>
-          <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "商品一覧", items_path %></li>
-          <li><%= link_to "新規登録", new_customer_registration_path %></li>
-          <li><%= link_to "ログイン", new_customer_session_path %></li>
-          <% end %>
-        </ul>
+        <div class="list">
+          <ul>
+            <!--管理者ログイン-->
+            <% if admin_signed_in? %>
+            <li><%= link_to "商品一覧", admin_items_path, class: 'header-btn' %></li>
+            <li><%= link_to "会員一覧", admin_customers_path, class: 'header-btn' %></li>
+            <li><%= link_to "注文履歴一覧", admin_orders_path, class: 'header-btn' %></li>
+            <li><%= link_to "ジャンル一覧", admin_genres_path, class: 'header-btn' %></li>
+            <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'header-btn' %></li>
+            <!--会員ログイン-->
+            <% elsif customer_signed_in? %>
+            <li><%= link_to "マイページ", customers_my_page_path, class: 'header-btn' %></li>
+            <li><%= link_to "商品一覧", items_path, class: 'header-btn' %></li>
+            <li><%= link_to "カート", cart_items_path, class: 'header-btn' %></li>
+            <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'header-btn' %></li>
+            <!--共通ログアウト-->
+            <% else %>
+            <li><%= link_to "About", about_path, class: 'header-btn' %></li>
+            <li><%= link_to "商品一覧", items_path, class: 'header-btn' %></li>
+            <li><%= link_to "新規登録", new_customer_registration_path, class: 'header-btn' %></li>
+            <li><%= link_to "ログイン", new_customer_session_path, class: 'header-btn' %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
 
     </header>
