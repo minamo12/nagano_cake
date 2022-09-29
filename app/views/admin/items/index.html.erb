@@ -1,33 +1,35 @@
 
-<div class="flex">
+<div class="width-90p">
+
+<div class="flex width-100p">
 <h4>商品一覧</h4>
 
-<div class="right">
-  <%= link_to(new_admin_item_path, class: 'shadow') do %>
+<div class="right-send">
+  <%= link_to(new_admin_item_path) do %>
     <i class="fa-regular fa-plus maru font-size"></i>
   <% end %>
 </div>
 </div>
 
-<table class="top-bottom-border center space_15">
+<table class="top-bottom-border center space_15 width-100p">
   <thead>
     <tr>
-      <th>商品ID</th>
-      <th>商品名</th>
-      <th>税抜価格</th>
-      <th>ジャンル</th>
-      <th>ステータス</th>
+      <th class="no-table-border">商品ID</th>
+      <th class="no-table-border">商品名</th>
+      <th class="no-table-border">税抜価格</th>
+      <th class="no-table-border">ジャンル</th>
+      <th class="no-table-border">ステータス</th>
     </tr>
   </thead>
 
   <% @items.each do |item| %>
   <tbody>
     <tr>
-      <td><%= item.id %></td>
-      <td><%= link_to item.name, admin_item_path(item.id), class: 'black-link' %></td>
-      <td><%= item.price.to_s(:delimited, delimiter: ",") %></td>
-      <td><%= item.genre.name %></td>
-      <td>
+      <td class="no-table-border"><%= item.id %></td>
+      <td class="no-table-border"><%= link_to item.name, admin_item_path(item.id), class: 'black-link' %></td>
+      <td class="no-table-border"><%= item.price.to_s(:delimited, delimiter: ",") %></td>
+      <td class="no-table-border"><%= item.genre.name %></td>
+      <td class="no-table-border">
         <% if item.is_active %>
           <div class="true">販売中</div>
         <% else %>
@@ -44,4 +46,6 @@
   <div class="page">
     <%= paginate @items %>
   </div>
+</div>
+
 </div>

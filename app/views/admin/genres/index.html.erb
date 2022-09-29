@@ -5,7 +5,7 @@
   <div class="row">
     <label class="col-2 top-bottom-text-center">ジャンル名</label>
     <%= f.text_field :name, class: 'col-3 right-space-big', placeholder: "ジャンル名" %>
-    <%= f.submit '新規登録', class: 'btn btn-success col-2' %>
+    <%= f.submit '新規登録', class: 'btn btn-success' %>
   <% end %>
   </div>
 </div>
@@ -14,17 +14,17 @@
   <table class="col-5">
     <thead>
       <tr class="bottom-border">
-        <th class="text-center">ジャンル</th>
-        <th colspan="1"></th>
+        <th class="text-center no-table-border">ジャンル</th>
+        <th colspan="1" class="no-table-border"></th>
       </tr>
     </thead>
     <% @genres.each do |genre| %>
     <tbody>
       <tr class="bottom-border">
-        <td>
+        <td class="no-table-border">
           <%= genre.name %>
         </td>
-        <td class="genre-space">
+        <td class="genre-space no-table-border cell-center">
           <%= link_to "編集する", edit_admin_genre_path(genre.id), class: 'btn btn-success none-border' %>
         </td>
       </tr>

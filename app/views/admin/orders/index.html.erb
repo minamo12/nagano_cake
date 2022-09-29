@@ -1,23 +1,23 @@
-<h1>注文履歴一覧</h1>
+<h4>注文履歴一覧</h4>
 
-<div class="flex">
-  <table class="no-deco">
+<div class="width-100p">
+  <table class="top-bottom-border center space_15 width-70p">
     <thead>
       <tr>
-        <th>購入日時</th>
-        <th>購入者</th>
-        <th>注文個数</th>
-        <th>注文ステータス</th>
+        <th class="no-table-border">購入日時</th>
+        <th class="no-table-border">購入者</th>
+        <th class="no-table-border">注文個数</th>
+        <th class="no-table-border">注文ステータス</th>
       </tr>
     </thead>
     <% @orders.each do |order| %>
     <tbody>
-      <tr>
-        <td><%= link_to order.created_at.strftime('%Y/%m/%d %H:%M'), admin_order_path(order.id), class: 'black-link' %></td>
-        <td><%= order.customer.last_name %><%= order.customer.first_name %></td>
+      <tr class="top-bottom-border">
+        <td class="no-table-border"><%= link_to order.created_at.strftime('%Y/%m/%d %H:%M'), admin_order_path(order.id), class: 'black-link' %></td>
+        <td class="no-table-border"><%= order.customer.last_name %><%= order.customer.first_name %></td>
         <% @amount = @total_amount.find_by(order_id: order.id) %>
-        <td><%= @amount.sum_amount %></td>
-        <td><%= order.status_i18n %></td>
+        <td class="no-table-border"><%= @amount.sum_amount %></td>
+        <td class="no-table-border"><%= order.status_i18n %></td>
       </tr>
     </tbody>
     <% end %>

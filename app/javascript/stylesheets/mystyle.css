@@ -22,6 +22,7 @@ h4 {
   padding: 3px 30px;
   margin-bottom: 30px;
   font-weight: bold;
+  margin-left: 70px;
 }
 
 h5 {
@@ -43,6 +44,10 @@ main {
 footer {
   border-top: solid 1px;
   margin-top: 10px;
+}
+
+select {
+  width: 100%;
 }
 
 /*フォント・文字*/
@@ -81,12 +86,12 @@ footer {
 /*ボーダー*/
 
 .top-bottom-border {
-  border-bottom: solid 1px #eee;
+  border-bottom: solid 1px silver;
   border-top: solid 1px silver;
 }
 
 .bottom-border {
-  border-bottom: solid 1px #eee;
+  border-bottom: solid 1px silver;
 }
 
 .btn-size {
@@ -101,7 +106,6 @@ footer {
 
 .center {
   margin: 0 auto;
-  width: 100%;
 }
 
 .flex {
@@ -118,15 +122,13 @@ footer {
   display: inline;
 }
 
-.right {
-  margin-right: 0;
-  margin-left: auto;
-  width: 20%;
-}
-
 .right-send {
   margin-right: 0;
   margin-left: auto;
+}
+.bottom-send {
+  margin-bottom: 0;
+  margin-top: auto;
 }
 
 .right-and-bottom {
@@ -140,6 +142,10 @@ footer {
 
 .bottom {
   text-align: end;
+}
+
+.top {
+  vertical-align: top;
 }
 
 /*ページ*/
@@ -231,6 +237,10 @@ footer {
   font-weight: initial;
 }
 
+.no-table-border {
+  border: none;
+}
+
 .cell-center {
   vertical-align: middle;
   text-align: center;
@@ -242,14 +252,11 @@ footer {
   border-radius: 50%;
   padding: 7px;
   background-color: White;
+  filter: drop-shadow(2px 2px 0px #c0c0c0);
 }
 
 
 /*装飾*/
-
-.shadow {
-  filter: drop-shadow(2px 2px 0px #c0c0c0);
-}
 
 .red {
   color: red;
@@ -297,6 +304,10 @@ footer {
 
 .width-90p {
   width: 90%;
+}
+
+.width-80p {
+  width: 80%;
 }
 
 .width-70p {

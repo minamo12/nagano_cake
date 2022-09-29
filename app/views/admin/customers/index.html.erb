@@ -2,29 +2,29 @@
 
 <h4>会員一覧</h4>
 
-<div class="flex">
+<div class="width-100p">
 
-  <table class="top-bottom-border center space_15">
+  <table class="top-bottom-border center space_15 width-70p">
     <thead>
       <tr>
-        <th>会員ID</th>
-        <th>氏名</th>
-        <th>メールアドレス</th>
-        <th>ステータス</th>
+        <th class="no-table-border">会員ID</th>
+        <th class="no-table-border">氏名</th>
+        <th class="no-table-border">メールアドレス</th>
+        <th class="no-table-border">ステータス</th>
       </tr>
     </thead>
     <% @customers.each do |customer| %>
     <tbody>
-      <tr>
-        <td><%= customer.id %></td>
-        <td>
+      <tr class="top-bottom-border">
+        <td class="no-table-border"><%= customer.id %></td>
+        <td class="no-table-border">
           <%= link_to(admin_customer_path(customer.id), class: 'black-link') do %>
             <%= customer.first_name %>
             <%= customer.last_name %>
           <% end %>
           </td>
-        <td><%= customer.email %></td>
-        <td>
+        <td class="no-table-border"><%= customer.email %></td>
+        <td class="no-table-border">
           <% if customer.is_active %>
             <div class="true">有効</div>
           <% else %>

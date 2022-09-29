@@ -1,5 +1,7 @@
 <h4>注文履歴詳細</h4>
 
+<div class="width-90p">
+
 <div>
   <label class="font_weight col-2">購入者</label>
   <%= link_to(admin_customers_path(@order.customer.id), class: 'black-link') do %>
@@ -25,65 +27,69 @@
 <div class="flex space_30">
   <label class="font_weight col-2">注文ステータス</label>
   <%= form_with model: @order, url: admin_order_path(@order.id), method: :patch do |f| %>
-  <div class="inline right-space-big col-2">
-    <%= f.select :status, Order.statuses.keys.map {|k| [I18n.t("enums.order.status.#{k}"), k]} %>
+  <div class="flex">
+    <div><%= f.select :status, Order.statuses.keys.map {|k| [I18n.t("enums.order.status.#{k}"), k]} %></div>
+    <div><%= f.submit "更新", class: 'btn btn-success left-space-50' %></div>
   </div>
-  <%= f.submit "更新", class: 'btn btn-success' %>
   <% end %>
 </div>
 
 <div class="flex">
 
-  <table>
+  <table class="top-bottom-border width-70p">
     <thead>
       <tr>
-        <th>商品名</th>
-        <th>単価(税込み)</th>
-        <th>数量</th>
-        <th>小計</th>
-        <th>注文ステータス</th>
-        <th colspan="1"></th>
+        <th class="no-table-border">商品名</th>
+        <th class="no-table-border">単価(税込)</th>
+        <th class="no-table-border">数量</th>
+        <th class="no-table-border">小計</th>
+        <th class="no-table-border">製作ステータス</th>
+        <th colspan="1" class="no-table-border"></th>
       </tr>
     </thead>
 
     <tbody>
       <% @order_details.each do |order_detail| %>
       <tr>
-        <td><%= order_detail.item.name %></td>
-        <td><%= order_detail.with_tax_price %></td>
-        <td><%= order_detail.amount %></td>
-        <td><%= order_detail.subtotal %></td>
-        <td>
+        <td class="no-table-border"><%= order_detail.item.name %></td>
+        <td class="no-table-border"><%= order_detail.with_tax_price.to_s(:delimited, delimiter: ",") %></td>
+        <td class="no-table-border"><%= order_detail.amount %></td>
+        <td class="no-table-border"><%= order_detail.subtotal.to_s(:delimited, delimiter: ",") %></td>
+        <td class="no-table-border">
           <%= form_with model: order_detail, url: admin_order_detail_path(order_detail.id), method: :patch do |f| %>
-            <%= f.select :making_status, OrderDetail.making_statuses.keys.map {|k| [I18n.t("enums.order_detail.making_status.#{k}"), k]}, class: 'right-space' %>
-            <%= f.submit "更新", class: 'btn btn-success' %>
+            <%= f.select :making_status, OrderDetail.making_statuses.keys.map {|k| [I18n.t("enums.order_detail.making_status.#{k}"), k]} %>
+        </td>
+        <td class="no-table-border width-10p">
+            <%= f.submit "更新", class: 'btn btn-success width-100p' %>
           <% end %>
         </td>
         <% @total += order_detail.subtotal %>
-        <td></td>
       </tr>
       <% end %>
     </tbody>
 
   </table>
 
-  <div class="bottom">
+  <div class="bottom-send right-send">
 
-    <div>
-      <label class="font_weight">商品合計</label>
-      <%= @total %>
+    <div class="flex">
+      <label class="font_weight right-space">商品合計</label>
+      <div class="right-send"><%= @total.to_s(:delimited, delimiter: ",") %>円</div>
     </div>
 
-    <div>
-      <label class="font_weight">送料</label>
-      <%= @shipping_cost %>
+    <div class="flex">
+      <label class="font_weight right-space">送料</label>
+      <div class="right-send"><%= @shipping_cost %>円</div>
     </div>
 
-    <div class="font_weight">
-      <label>請求金額合計</label>
-      <%= @total + @shipping_cost %>
+    <div class="font_weight flex">
+      <label class="right-space">請求金額合計</label>
+      <% @total_cost = @total + @shipping_cost %>
+      <div class="right-send"><%= @total_cost.to_s(:delimited, delimiter: ",") %>円</div>
     </div>
 
   </div>
+
+</div>
 
 </div>

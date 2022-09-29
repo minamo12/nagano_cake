@@ -1,39 +1,39 @@
 
 <h4><%= @customer.first_name %><%= @customer.last_name %>さんの会員詳細</h4>
 
-<table>
+<table class="width-100p">
 
   <tr>
-    <th class="no-deco">会員ID</th>
-    <td><%= @customer.id %></td>
+    <th class="no-deco no-table-border width-20p">会員ID</th>
+    <td class="no-table-border"><%= @customer.id %></td>
   </tr>
   <tr>
-    <th class="no-deco">氏名</th>
-    <td><%= @customer.first_name %> <%= @customer.last_name %></td>
+    <th class="no-deco no-table-border">氏名</th>
+    <td class="no-table-border"><%= @customer.first_name %> <%= @customer.last_name %></td>
   </tr>
   <tr>
-    <th class="no-deco">フリガナ</th>
-    <td><%= @customer.first_name_kana %> <%= @customer.last_name_kana %></td>
+    <th class="no-deco no-table-border">フリガナ</th>
+    <td class="no-table-border"><%= @customer.first_name_kana %> <%= @customer.last_name_kana %></td>
   </tr>
   <tr>
-    <th class="no-deco">郵便番号</th>
-    <td><%= @customer.postal_code %></td>
+    <th class="no-deco no-table-border">郵便番号</th>
+    <td class="no-table-border"><%= @customer.postal_code %></td>
   </tr>
   <tr>
-    <th class="no-deco">住所</th>
-    <td><%= @customer.address %></td>
+    <th class="no-deco no-table-border">住所</th>
+    <td class="no-table-border"><%= @customer.address %></td>
   </tr>
   <tr>
-    <th class="no-deco">電話番号</th>
-    <td><%= @customer.telephone_number %></td>
+    <th class="no-deco no-table-border">電話番号</th>
+    <td class="no-table-border"><%= @customer.telephone_number %></td>
   </tr>
   <tr>
-    <th class="no-deco">メールアドレス</th>
-    <td><%= @customer.email %></td>
+    <th class="no-deco no-table-border">メールアドレス</th>
+    <td class="no-table-border"><%= @customer.email %></td>
   </tr>
   <tr>
-    <th class="no-deco">会員ステータス</th>
-    <td>
+    <th class="no-deco no-table-border">会員ステータス</th>
+    <td class="no-table-border">
       <% if @customer.is_active %>
         <div class="true">有効</div>
       <% else %>
