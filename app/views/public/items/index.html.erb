@@ -1,8 +1,8 @@
 
 
-<div class="row space_30">
-<h2>商品一覧</h2>
-<p>(全<%= Item.all.count %>件)</p>
+<div class="flex space_30">
+<h2 class="bottom-send">商品一覧</h2>
+<div class="bottom-send">&nbsp;(全<%= Item.all.count %>件)</div>
 </div>
 
 <div class="flex item-index">
@@ -13,7 +13,7 @@
 
     <div>
       <%= link_to(item_path(item.id)) do %>
-        <%= image_tag item.get_image(300, 150), class: 'picture-size picture-space' %>
+        <%= image_tag item.get_image(300, 150), class: 'item-size picture-space' %>
       <% end %>
     </div>
     <div class="font_weight"><%= item.name %></div>

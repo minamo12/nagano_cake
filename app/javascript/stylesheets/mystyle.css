@@ -38,7 +38,7 @@ a {
 }
 
 main {
-  height: 600px;
+  height: 700px;
 }
 
 footer {
@@ -199,7 +199,7 @@ select {
 
 .top-p-area {
   width: 400px;
-  height: 150px;
+  height: 130px;
   padding: 20px 0;
 }
 
@@ -209,6 +209,10 @@ select {
 
 .left-space-50 {
   margin-left: 50px;
+}
+
+.left-space-30 {
+  margin-left: 30px;
 }
 
 .left-space-20 {
@@ -276,9 +280,8 @@ select {
 
 /*画像*/
 
-.picture-size {
-  width: 200px;
-  height: 150px
+.item-picture {
+  justify-content: space-evenly;
 }
 
 /*商品*/
@@ -289,6 +292,11 @@ select {
 
 .item {
   margin: 0 10px 30px 0;
+}
+
+.item-size {
+  width: 250px;
+  height: 170px;
 }
 
 .item-name {

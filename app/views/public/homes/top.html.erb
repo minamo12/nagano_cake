@@ -1,4 +1,6 @@
-<div class="outline top-area">
+<div class="width-90p">
+
+<div class="outline top-area space_15">
 
   <div>
     <p class="outline top-p-area">
@@ -12,17 +14,17 @@
 </div>
 
 
-<h1>新着商品</h1>
+<h1 class="space_15">新着商品</h1>
 
-<div class="flex">
+<div class="flex item-picture">
 
 <% @items.each do |item| %>
 
 <div>
 
-  <div>
+  <div class="width-20p">
     <%= link_to(item_path(item.id)) do %>
-      <%= image_tag item.get_image(300, 150), class: 'picture-size' %>
+      <%= image_tag item.get_image(300, 150) %>
     <% end %>
   </div>
   <div><%= item.name %></div>
@@ -34,6 +36,8 @@
 
 </div>
 
-<div class="right">
-  <%= link_to "全ての商品を見る>", items_path %>
+<div class=" width-100p flex">
+  <%= link_to "全ての商品を見る>", items_path, class: 'right-send' %>
+</div>
+
 </div>
