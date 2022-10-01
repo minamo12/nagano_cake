@@ -70,6 +70,10 @@ select {
   width: 200px;
 }
 
+.text-center-send {
+  margin: auto 0;
+}
+
 .font_weight {
   font-weight: bold;
 }
@@ -146,6 +150,14 @@ select {
 
 .top {
   vertical-align: top;
+}
+
+.complete {
+  margin-top: 200px;
+}
+
+.unsubscribe {
+  margin-top: 100px;
 }
 
 /*ページ*/
@@ -245,6 +257,14 @@ select {
   border: none;
 }
 
+.no-table-border-right {
+  border-right: none;
+}
+
+.no-table-border-left {
+  border-left: none;
+}
+
 .cell-center {
   vertical-align: middle;
   text-align: center;
@@ -335,12 +355,16 @@ select {
   width: 40%;
 }
 
+.width-35p {
+  width: 35%;
+}
+
 .width-30p {
   width: 30%;
 }
 
-.width-35p {
-  width: 35%;
+.width-25p {
+  width: 25%;
 }
 
 .width-20p {

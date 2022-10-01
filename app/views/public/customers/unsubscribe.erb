@@ -1,16 +1,17 @@
-<div class="width-100p text-center">
 
-  <div class="big-font font_weight">本当に退会しますか？</div>
+<div class="width-100p text-center unsubscribe">
 
-  <p>
+  <div class="big-font font_weight space_15">本当に退会しますか？</div>
+
+  <p class="space_30">
     退会すると、会員登録情報や<br>
     これまでの購入履歴が閲覧できなくなります。<br>
     退会する場合は、「退会する」をクリックしてください。
   </p>
 
   <div class="flex-center">
-    <div><%= link_to "退会しない", customers_my_page_path, class: 'btn btn-primary' %></div>
-    <div><%= link_to "退会する", customers_withdraw_path(customer: {is_active: false}), method: :patch, class: 'btn btn-danger' %></div>
+    <div class="width-10p"><%= link_to "退会しない", customers_my_page_path, class: 'btn btn-primary none-border width-100p' %></div>
+    <div class="width-10p"><%= link_to "退会する", customers_withdraw_path(customer: {is_active: false}), method: :patch, class: 'btn btn-danger left-space-20 none-border width-100p' %></div>
   </div>
 
 </div>

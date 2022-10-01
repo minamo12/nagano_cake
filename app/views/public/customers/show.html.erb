@@ -3,42 +3,42 @@
 
   <h4>マイページ</h4>
 
-  <div>
+  <div class="width-100p">
     <div class="space_15 flex">
       <div class="big-font font_weight col-2">登録情報</div>
       <%= link_to "編集する", customers_infomation_edit_path, class: 'btn btn-success none-border' %>
     </div>
 
-    <table class="space_30">
+    <table class="space_30 width-60p">
 
       <tr>
-        <th class="table-boder">氏名</th>
-        <td class="table-boder"><%= @customer.first_name %>　<%= @customer.last_name %></td>
+        <th class="width-25p">氏名</th>
+        <td><%= @customer.first_name %>　<%= @customer.last_name %></td>
       </tr>
 
       <tr>
-        <th class="table-boder">カナ</th>
-        <td class="table-boder"><%= @customer.first_name_kana %>　<%= @customer.last_name_kana %></td>
+        <th>カナ</th>
+        <td><%= @customer.first_name_kana %>　<%= @customer.last_name_kana %></td>
       </tr>
 
       <tr>
-        <th class="table-boder">郵便番号</th>
-        <td class="table-boder"><%= @customer.postal_code %></td>
+        <th>郵便番号</th>
+        <td><%= @customer.postal_code %></td>
       </tr>
 
       <tr>
-        <th class="table-boder">住所</th>
-        <td class="table-boder"><%= @customer.address %></td>
+        <th>住所</th>
+        <td><%= @customer.address %></td>
       </tr>
 
       <tr>
-        <th class="table-boder">電話番号</th>
-        <td class="table-boder"><%= @customer.telephone_number %></td>
+        <th>電話番号</th>
+        <td><%= @customer.telephone_number %></td>
       </tr>
 
       <tr>
-        <th class="table-boder">メールアドレス</th>
-        <td class="table-boder"><%= @customer.email %></td>
+        <th>メールアドレス</th>
+        <td><%= @customer.email %></td>
       </tr>
 
     </table>

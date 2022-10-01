@@ -6,7 +6,7 @@
 
 
 <div class="big-font font_weight">支払方法</div>
-<div class="left-space-50 space_30">
+<div class="left-space-50 space_15">
   <div>
     <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
     <%= f.label :payment_method, Order.payment_methods_i18n[:credit_card] %>
@@ -22,19 +22,19 @@
 <div class="left-space-50 space_30">
   <div class="space_15">
     <%= f.radio_button :select_address, 0 %>ご自身の住所
-    <%= current_customer.address_display%>
+    <div class="left-space-30"><%= current_customer.address_display%></div>
   </div>
 
   <div class="space_15">
     <%= f.radio_button :select_address, 1  %>登録済住所から選択<br/>
-    <div class="left-space-20">
+    <div class="width-80p left-space-30">
       <%= f.select :address_id, options_from_collection_for_select(Address.all, :id, :address_display) %>
     </div>
   </div>
 
   <div class="space_15">
     <%= f.radio_button :select_address, 2 %>新しいお届け先<br/>
-    <div>
+    <div class="left-space-30">
       <label class="col-3 small-font">郵便番号(ハイフンなし)</label>
       <%= f.text_field :postal_code, placeholder: "0000000" %><br/>
       <label class="col-3 small-font">住所</label>

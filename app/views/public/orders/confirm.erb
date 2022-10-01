@@ -4,19 +4,24 @@
 <div class="flex width-100p space_30">
 
   <div class="width-60p">
-    <table>
+    <table class="width-90p">
       <thead>
         <tr>
-          <th class="table-boder width-40p none-padding">商品名</th>
-          <th class="table-boder width-20p none-padding">単価(税込み)</th>
-          <th class="table-boder width-20p none-padding">数量</th>
-          <th class="table-boder width-20p none-padding">小計</th>
+          <th class="">商品名</th>
+          <th class="width-15p">単価(税込)</th>
+          <th class="width-15p">数量</th>
+          <th class="width-15p">小計</th>
         </tr>
       </thead>
       <% @cart_items.each do |cart_item| %>
       <tbody>
         <tr>
-          <td class="table-boder"><div class="left-space-50"><%= cart_item.item.name %></div></td>
+          <td class="table-boder">
+          <div class="flex">
+            <div><%= image_tag cart_item.item.get_image(60, 80) %></div>
+            <div class="left-space-20 text-center-send"><%= cart_item.item.name %></div>
+          </div>
+          </td>
           <td class="table-boder"><%= cart_item.item.with_tax_price.to_s(:delimited, delimiter: ",") %></td>
           <td class="table-boder"><%= cart_item.amount %></td>
           <td class="table-boder"><%= cart_item.subtotal.to_s(:delimited, delimiter: ",") %></td>
@@ -27,8 +32,8 @@
     </table>
   </div>
 
-  <div>
-    <table>
+  <div class="width-20p">
+    <table class="width-100p">
       <tr>
         <th class="table-boder">送料</th>
         <td class="table-boder"><%= @order.shipping_cost %></td>
@@ -51,12 +56,12 @@
 
 <div class="space_30 flex">
   <div class="big-font font_weight">支払方法</div>
-  <div class="left-space-20"><%= @order.payment_method_i18n %></div>
+  <div class="left-space-20 bottom-send"><%= @order.payment_method_i18n %></div>
 </div>
 
 <div class="space_30 flex">
   <div class="big-font font_weight">お届け先</div>
-  <div class="left-space-20"><%= @order.address_display %></div>
+  <div class="left-space-20"><%= @order.postal_code %><%= @order.address %></br><%= @order.name %></div>
 </div>
 
 <div class="text-center">
