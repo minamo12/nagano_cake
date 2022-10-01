@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
     :postal_code, :address, :telephone_number])
   end
 
+  def after_admin_sign_in_path_for(resource)
+    admin_orders_path
+  end
+
+  def after_admin_sign_out_path_for(resource)
+    new_admin_session_path
+  end
+
 end

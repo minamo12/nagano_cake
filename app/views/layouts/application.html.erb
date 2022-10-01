@@ -46,7 +46,14 @@
           </ul>
         </div>
       </div>
-
+      <div class="width-100p">
+        <%= form_with do |f| %>
+        <div class="search">
+          <%= f.text_field :none, placeholder: "Search" %>
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </div>
+        <% end %>
+      </div>
     </header>
 
     <main>
