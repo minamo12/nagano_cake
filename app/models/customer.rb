@@ -12,5 +12,9 @@ class Customer < ApplicationRecord
     '〒' + postal_code + ' ' + address + ' ' + first_name + last_name
   end
 
+  def active_for_authentication?
+    super && (is_active == true)
+  end
+
 
 end

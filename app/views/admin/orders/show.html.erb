@@ -5,7 +5,7 @@
 <div>
   <label class="font_weight col-2">購入者</label>
   <%= link_to(admin_order_path(@order.id), class: 'black-link') do %>
-    <%= @order.customer.first_name %><%= @order.customer.last_name %>
+    <%= @order.customer.last_name %><%= @order.customer.first_name %>
   <% end %>
 </div>
 

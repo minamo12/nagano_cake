@@ -7,9 +7,8 @@ class Public::OrdersController < ApplicationController
   end
 
   def index
-    @orders = Order.all
+    @orders = current_customer.orders.page(params[:page]).per(6)
     @total = 0
-    #binding.pry
   end
 
   def show

@@ -1,5 +1,5 @@
 
-<h4><%= @customer.first_name %><%= @customer.last_name %>さんの会員詳細</h4>
+<h4><%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細</h4>
 
 <table class="width-100p">
 
@@ -9,11 +9,11 @@
   </tr>
   <tr>
     <th class="no-deco no-table-border">氏名</th>
-    <td class="no-table-border"><%= @customer.first_name %> <%= @customer.last_name %></td>
+    <td class="no-table-border"><%= @customer.last_name %> <%= @customer.first_name %></td>
   </tr>
   <tr>
     <th class="no-deco no-table-border">フリガナ</th>
-    <td class="no-table-border"><%= @customer.first_name_kana %> <%= @customer.last_name_kana %></td>
+    <td class="no-table-border"><%= @customer.last_name_kana %> <%= @customer.first_name_kana %></td>
   </tr>
   <tr>
     <th class="no-deco no-table-border">郵便番号</th>

@@ -11,7 +11,11 @@
 
   <div class="flex-center">
     <div class="width-10p"><%= link_to "退会しない", customers_my_page_path, class: 'btn btn-primary none-border width-100p' %></div>
-    <div class="width-10p"><%= link_to "退会する", customers_withdraw_path(customer: {is_active: false}), method: :patch, class: 'btn btn-danger left-space-20 none-border width-100p' %></div>
+    <div class="width-10p">
+      <%= link_to "退会する", customers_withdraw_path(customer: {is_active: false}),
+      method: :patch, class: 'btn btn-danger left-space-20 none-border width-100p',
+      "data-confirm" => "本当に退会しますか？" %>
+    </div>
   </div>
 
 </div>

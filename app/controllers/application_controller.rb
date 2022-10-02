@@ -9,12 +9,20 @@ class ApplicationController < ActionController::Base
     :postal_code, :address, :telephone_number])
   end
 
-  def after_admin_sign_in_path_for(resource)
-    admin_orders_path
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(Admin)
+      admin_orders_path
+    else
+      root_path
+    end
   end
 
-  def after_admin_sign_out_path_for(resource)
-    new_admin_session_path
+  def after_sign_out_path_for(resource)
+    if resource == :admin
+      new_admin_session_path
+    else
+      root_path
+    end
   end
 
 end
